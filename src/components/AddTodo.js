@@ -9,7 +9,7 @@ export default function AddTodo(props) {
     }
     return (
         <div className='container my-3 form-control card shadow-lg'>
-            <h3>Add a Todo</h3>
+            <h3 className='fst-italic'>Add a Todo</h3>
             <form onSubmit={submit}>
                 <div className="mb-3">
                     <label htmlFor="task" className="form-label">Task Title</label>

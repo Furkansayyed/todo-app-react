@@ -15,16 +15,16 @@ function App() {
     }))
   }
 
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState('dark');
 
   const darkMode = () => {
-    if (mode == 'light') {
-      setMode('dark');
-      document.body.setAttribute("data-bs-theme", "dark");
-    }
-    else {
+    if (mode === 'dark') {
       setMode('light');
       document.body.setAttribute("data-bs-theme", "light");
+    }
+    else {
+      setMode('dark');
+      document.body.setAttribute("data-bs-theme", "dark");
     }
   }
 
