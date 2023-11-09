@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Todos from './components/Todos';
+import AddTodo from './components/AddTodo';
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
   return (
     <>
       <Navbar title="Todos App" aboutText="About Us" darkMode={darkMode} />
+      <AddTodo />
       <Todos todos={todos} onDelete={onDelete} />
     </>
   );
