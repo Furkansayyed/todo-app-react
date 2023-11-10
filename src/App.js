@@ -7,12 +7,30 @@ import AddTodo from './components/AddTodo';
 
 function App() {
 
-  const onDelete = (todo) =>{
-    console.log("Delete function is called" , todo)
+  const onDelete = (todo) => {
+    console.log("Delete function is called", todo)
 
     setTodos(todos.filter((e) => {
-      return e!== todo;
+      return e !== todo;
     }))
+  }
+
+  const addTodo = (title, desc) => {
+    console.log('I am Adding')
+    let sno;
+    if (todos.length === 0) {
+      sno = 1;
+    }
+    else {
+      sno = todos[todos.length - 1].sno + 1;
+    }
+    const myTodo = {
+      sno: sno,
+      Task: title,
+      Description: desc,
+    }
+    setTodos([...todos, myTodo])
+    console.log(myTodo)
   }
 
   const [mode, setMode] = useState('dark');
@@ -51,7 +69,7 @@ function App() {
   return (
     <>
       <Navbar title="Todos App" aboutText="About Us" darkMode={darkMode} />
-      <AddTodo />
+      <AddTodo addTodo={addTodo} />
       <Todos todos={todos} onDelete={onDelete} />
     </>
   );

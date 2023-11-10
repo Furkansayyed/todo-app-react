@@ -5,7 +5,14 @@ export default function AddTodo(props) {
     const [title, setTitle] = useState("");
     const [desc, setdesc] = useState("");
 
-    const submit = () => {
+    const submit = (e) => {
+        e.preventDefault();
+        if (!title || !desc) {
+            alert('PLease fill both the fields');
+        }
+        else {
+            props.addTodo(title, desc);
+        }
     }
     return (
         <div className='container my-3 form-control card shadow-lg'>
